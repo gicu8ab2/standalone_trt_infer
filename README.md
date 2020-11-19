@@ -1,3 +1,15 @@
+## TensorRT inferencing with Yolov5s (tag3.0) on COCO-pretrained models
+
+This code is forked from [TensorRTX](https://github.com/wang-xinyu/tensorrtx) based on the 
+Yolov5s tag3.0 Pytorch model at [Ultralytics-Yolov5](https://github.com/ultralytics/yolov5) and 
+applies the following modifications
+
+* abstracts away the engine build process (done to make engine file compatible also with Nvidia Deepstream)
+* writes metadata to txt files containing bounding box, objectness confidence, and object class
+* annotates output files to include objectness confidence and object centroid
+* supply yolov5s.engine file designed to work with Nvidia Deepstream
+
+
 ### Build yolov5s TensorRT inference app (COCO-pretrained)
 
 	mkdir -p build && cd build
@@ -29,6 +41,13 @@ Sample metadata output:
 	1073 489 174 79 0.864593 2
 	622 470 113 88 0.757637 2
 	555 470 76 60 0.663252 2
+	
+	
+## References
+
+* [Ultralytics-Yolov5](https://github.com/ultralytics/yolov5)
+* [TensorRTX](https://github.com/wang-xinyu/tensorrtx)
+* [Nvidia TensorRT Installation Documentation](https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html)
 
 
 
